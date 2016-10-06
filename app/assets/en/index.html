@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Sotogrande Taxi</title>
+		<meta name="description" content="Sotogrande Taxi: the best taxi service in the Sotogrande area." />
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300|Source+Sans+Pro:300">
+		<link rel="icon" href="/images/icon-web.png"/>
+		<script async src='https://www.google-analytics.com/analytics.js'></script>
+		<script>
+			function Resizer(node){
+				var elem = node;
+				var curH;
+
+				function resize(h){
+					elem.style.height = h+'px';
+				};
+
+				function resizeHandler(e){
+					var newH =	window.innerHeight ||
+								document.documentElement.clientHeight ||
+								document.getElementsByTagName('body')[0].clientHeight;
+					newH = newH < 850? 850 : newH;
+					if(newH === curH) return; // only X changed
+					resize(newH);
+					curH = newH;
+				};
+				resizeHandler();
+				window.addEventListener('resize', resizeHandler);
+			}
+			window.onload = function(){
+				Resizer(document.getElementById('header'));
+				window.onload = undefined;
+			}
+		</script>
+		<script>
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', 'UA-83884075-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</head>
+	<body class="margin0">
+		<header id="header" class="position-relative fontFamily-antonio textShadow">
+			<div id="lang-selector" class="position-absolute">
+				<a class="lang-link" href="/">ES</a>
+				<a class="lang-link color-orange marginLeft-20px" href="/en">EN</a>
+			</div>
+			<img id="header-icon" class="position-absolute-center" src="/images/icon.png"/>
+			<h1 id="header-title" class="position-absolute-center">Sotogrande <span class="fontWeight-bold color-orange">taxi</span></h1>
+			<div id="header-phone" class="position-absolute-center">
+				<span itemprop="telephone">607 86 90 46</span>
+			</div>
+			<div id="header-sub" class="position-absolute-center">
+				<span id="header-big">You can get anywhere</span><br>
+				<span id="header-small" class="fontFamily-sourceSans">And we can help you get there</span>
+			</div>
+		</header>
+
+
+		<div id="body" class="fontFamily-sourceSans">
+			<div id="why" class="textAlign-center wrapped-30 marginVertical-50">
+				<h2>Why Sotogrande.<span class="color-orange">Taxi</span>?</h2>
+				<p>
+					At Sotogrande.taxi we work with people, for people. Whether we are offering you a regular taxi service, a personal chauffeur or a polo, golf or airport transfer, we work to offer you the best among the best service.<br/>No matter where you are or where you want to get, we invite you to call us, journey with us and enjoy with us.
+				</p>
+			</div>
+			<div id="services" class="wrapped-15 marginTop-50">
+				<div id="services-taxi" class="third first">
+					<h2>Professional taxi</h2>
+					<p>
+						We at Sotogrande Taxi offer our fleet of professional drivers to provide an excellent level of service at one of the finest places in the world. Whether for holidays, meetings or travel. Call now and enjoy a punctual and carefree taxi service.
+					</p>
+				</div>
+				<div id="services-golf" class="third">
+					<h2>Golf transfers</h2>
+					<p>
+						We have vehicles with enough luggage space for a group of people and their set of clubs. You can you make the booking directly, specifying your group size during the call and we will bring you to any of the amazing golf courses in the area.
+					</p>
+				</div>
+				<div id="services-chauffeur" class="third last">
+					<h2>Personal chauffeur</h2>
+					<p>
+						When you need a discrete or personalized service to attend an event, or you want to pass unnoticed, or just to go shopping, we offer a chauffeur that will pick you up to be with you and attend to all of your requirements until you get back to your home, hotel or destiny.
+					</p>
+				</div>
+			</div>
+		</div>
+		<footer id="footer" class="fontFamily-sourceSans">
+			<div class="column">
+				<h3>Contact</h3>
+				<p>Phone: 607 86 90 46</p>
+			</div>
+			<div class="column">
+				<h3>We also recommend</h3>
+				<p><a href="http://www.taxisanroque.com">Taxi San Roque</a></p>
+				<p><a href="http://www.taxienalcaidesa.com">Taxi at Alcaidesa</a></p>
+				<p><a href="http://www.radiotaxisotogrande.com">Radiotaxi Sotogrande</a></p>
+			</div>
+			<div class="column">
+				<h3>Interest links</h3>
+				<p><a rel="nofollow" href="http://sotogrande.com">Sotogrande</a></p>
+				<p><a rel="nofollow" href="http://puertosotogrande.com">Puerto Sotogrande</a></p>
+				<p><a rel="nofollow" href="http://www.valderrama.com">Real Club Valderrama</a></p>
+			</div>
+			<div class="column">
+				<h3>Copyright</h3>
+				<p>© 2015. All rights reserved.</p>
+				<p>Website created by <a href="http://www.oscardc.com">Oscar D.C.</a></p>
+			</div>
+		</footer>
+	</body>
+</html>

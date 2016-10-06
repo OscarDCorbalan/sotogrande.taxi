@@ -1,0 +1,176 @@
+body{min-width:880px;}
+
+.fontFamily-antonio,
+#body h2,
+#footer h3{
+	font-family: Oswald, Arial, Verdana, sans-serif;
+	font-weight:300;
+}
+.fontFamily-sourceSans{font-family: 'Source Sans Pro', Arial, Verdana, sans-serif;}
+.fontWeight-bold{font-weight: bold;}
+.textAlign-center{text-align:center;}
+.marginLeft-20px{margin-left: 20px;}
+.position-relative{
+	position:relative;
+}
+.position-absolute,
+.position-absolute-center{
+	position:absolute;
+}
+.position-absolute-center{
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+#header{	
+    background-image: url(/images/bg4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+	color:#FFF;
+	min-height: 850px;
+	position: relative;
+	text-align:center;
+}
+#header-title{
+	top:170px;
+	font-size:48px;
+	font-weight:300;
+	text-transform:uppercase;
+}
+#header-phone{
+    background-image: url(/images/icon-phone.png);
+    background-repeat: no-repeat;
+    font-size: 48px;
+    height: 41px;
+    line-height: 30px;
+    padding: 15px 0 5px 45px;
+    top: 350px;
+    width: 240px;
+}
+#header-sub{
+	bottom:200px;
+	text-transform:uppercase;
+}
+#header-big{	
+	font-size:72px;
+}
+#header-small{
+	bottom:100px;
+	font-size:36px;
+	color:#BBB;
+}
+#header-icon,
+#lang-selector{
+	top:30px;
+}
+#lang-selector{
+	right:10%;
+	font-size:24px;
+	background: rgba(255,255,255, 0.25);
+    padding: 10px 20px;
+}
+.lang-link{
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #DDD;
+	display:inline-block;
+}
+.lang-link:hover{
+	text-decoration: underline;
+}
+#body{
+	margin-top:80px;
+}
+#body h2{
+	font-weight:300;
+	font-size:32px;	
+}
+#body p{
+	line-height:28px;
+	color:#333;
+}
+#why h2::after{
+    content: "";
+    height: 1px;
+    width: 80px;
+    background-color: #F37321;
+    display: block;
+    margin: 30px auto;
+}
+#services::before{
+    content: "";
+    height: 1px;
+    background-color: #CCC;
+    display: block;
+    margin: 100px auto 0;	
+}
+#services-taxi,
+#services-golf,
+#services-chauffeur{
+	background-repeat:no-repeat;
+    background-position: center 40px;
+	background-size:87%;
+    display: inline-block;
+    padding: 23% 2% 50px;
+    vertical-align: top;
+    width: 28%;
+}
+#services-taxi{background-image:url(/images/service-sotogrande.jpg);}
+#services-golf{background-image:url(/images/service-golf-transfers.jpg);}
+#services-chauffeur{background-image:url(/images/service-chauffeur.jpg);}
+.third.first{border-right: 1px solid #CCC;}
+.third.last{border-left: 1px solid #CCC;}
+
+#footer{
+	min-height:200px;
+	background-image: url(/images/bg-footer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+	color:#FFF;
+	padding: 30px 10%;
+}
+#footer .column{
+	vertical-align:top;
+	display:inline-block;
+	width:24%;
+}
+#footer p,
+#footer a{
+	color:#CCC;
+}
+/* colors */
+.color-orange{color:#F37321;}
+
+/* shadow */
+.textShadow{text-shadow: 0 1px 0 #000;}
+
+/* margins */
+.margin0{margin: 0;}
+.marginTop-50{margin-top:50px;}
+.marginVertical-50{margin-top:50px; margin-bottom:50px;}
+
+/* wrappings */
+.wrapped-15{margin-left: 15%; margin-right: 15%;}
+.wrapped-30{margin-left: 31%; margin-right: 31%;}
+
+/* small screens */
+@media screen and (max-width: 1280px){
+	.wrapped-30{margin-left: 15%; margin-right: 15%;}
+	.wrapped-15{margin-left: 10%; margin-right: 10%;}
+	.third.first{border-right:none;}
+	.third.last{border-left:none;}
+	#services::before{height:0;}
+	#services h2{font-size:24px;}
+	#lang-selector{font-size:30px;}
+}
+}
+@media screen and (max-width: 1000px){
+	.wrapped-30{margin-left: 35px; margin-right: 35px;}
+	.wrapped-15{margin-left: 35px; margin-right: 35px;}
+	.third.first{border-right:none;}
+	.third.last{border-left:none;}
+	#footer{padding-left:5%;padding-right:5%;}
+	#lang-selector{font-size:36px;}
+}
