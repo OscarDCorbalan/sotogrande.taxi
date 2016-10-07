@@ -7,6 +7,8 @@
     "type": "git",
     "url": ""
   },
-  "scripts": {
+  "scripts": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
