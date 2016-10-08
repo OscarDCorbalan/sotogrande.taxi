@@ -23,73 +23,74 @@ body{min-width:880px;}
 	left: 0;
 	right: 0;
 }
-#header{	
-    background-image: url(/images/bg4.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 100%;
+#header{
+	background-image: url(/images/bg4.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 100%;
 	color:#FFF;
 	min-height: 850px;
 	position: relative;
 	text-align:center;
-}
-#header-title{
-	top:170px;
-	font-size:48px;
-	font-weight:300;
-	text-transform:uppercase;
-}
-#header-phone{
-    background-image: url(/images/icon-phone.png);
-    background-repeat: no-repeat;
-    font-size: 48px;
-    height: 41px;
-    line-height: 30px;
-    padding: 15px 0 5px 45px;
-    top: 350px;
-    width: 240px;
-}
-#header-sub{
-	bottom:200px;
-	text-transform:uppercase;
-}
-#header-big{	
-	font-size:72px;
-}
-#header-small{
-	bottom:100px;
-	font-size:36px;
-	color:#BBB;
-}
-#header-icon,
-#lang-selector{
-	top:30px;
-}
-#lang-selector{
-	right:10%;
-	font-size:24px;
-	background: rgba(255,255,255, 0.25);
-    padding: 10px 20px;
-}
-.lang-link{
-	text-transform: uppercase;
-	text-decoration: none;
-	color: #DDD;
-	display:inline-block;
-}
-.lang-link:hover{
-	text-decoration: underline;
+
+	.title {
+		top:170px;
+		font-size:48px;
+		font-weight:300;
+		text-transform:uppercase;
+	}
+	.phone {
+	    background-image: url(/images/icon-phone.png);
+	    background-repeat: no-repeat;
+	    font-size: 48px;
+	    height: 41px;
+	    line-height: 30px;
+	    padding: 15px 0 5px 45px;
+	    top: 350px;
+	    width: 240px;
+	}
+	.icon{
+		top:30px;
+	}
+	.lang-selector{
+		top:30px;
+		right:10%;
+		font-size:24px;
+		background: rgba(255,255,255, 0.25);
+	    padding: 10px 20px;
+		.lang-link{
+			text-transform: uppercase;
+			text-decoration: none;
+			color: #DDD;
+			display:inline-block;
+		}
+		.lang-link:hover{
+			text-decoration: underline;
+		}
+	}
+	.sub{
+		bottom:200px;
+		text-transform:uppercase;
+	}
+	.big{
+		font-size:72px;
+	}
+	.small{
+		bottom:100px;
+		font-size:36px;
+		color:#BBB;
+	}
 }
 #body{
 	margin-top:80px;
-}
-#body h2{
-	font-weight:300;
-	font-size:32px;	
-}
-#body p{
-	line-height:28px;
-	color:#333;
+	h2{
+		font-weight:300;
+		font-size:32px;
+	}
+	p{
+		line-height:28px;
+		color:#333;
+	}
 }
 #why h2::after{
     content: "";
@@ -104,7 +105,7 @@ body{min-width:880px;}
     height: 1px;
     background-color: #CCC;
     display: block;
-    margin: 100px auto 0;	
+    margin: 100px auto 0;
 }
 #services-taxi,
 #services-golf,
@@ -130,16 +131,19 @@ body{min-width:880px;}
     background-repeat: no-repeat;
 	color:#FFF;
 	padding: 30px 10%;
+
+	.column{
+		vertical-align:top;
+		display:inline-block;
+		width:24%;
+	}
+	
+	p,
+	a{
+		color:#CCC;
+	}
 }
-#footer .column{
-	vertical-align:top;
-	display:inline-block;
-	width:24%;
-}
-#footer p,
-#footer a{
-	color:#CCC;
-}
+
 /* colors */
 .color-orange{color:#F37321;}
 
