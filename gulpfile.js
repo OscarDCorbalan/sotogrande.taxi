@@ -19,7 +19,7 @@ const SRC_FILES_LESS = path.join(SRC_DIR.root, 'less', '*.less');
 /* TASKS */
 
 gulp.task('watch', () =>
-	gulp.watch(SRC_FILES.less, ['less', 'cssmin'])
+	gulp.watch(SRC_FILES_LESS, ['less', 'cssmin'])
 );
 
 // if includes -> paths: [ path.join(__dirname, 'less', 'includes') ]
