@@ -10,7 +10,9 @@
   "scripts": {},
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
     "gulp-cssmin": "^0.1.7",
+    "gulp-imagemin": "^3.0.3",
     "gulp-jade": "^1.1.0",
     "gulp-less": "^3.1.0",
     "gulp-rename": "^1.2.2"
