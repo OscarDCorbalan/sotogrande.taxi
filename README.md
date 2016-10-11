@@ -1,28 +1,20 @@
-# Brunch + Babel/ES6
+﻿# Sotogrande Taxi
 
-This is a modern JS skeleton for [Brunch](http://brunch.io).
+This is the source code to build the [Sotogrande Taxi site](http://www.sotogrande.taxi). It uses:
+  * Gulp to automate build tasks.
+  * Jade template engine to streamline html writing.
+  * Less, to modularize and minimize the CSS written.    
 
 ## Installation
 
-Clone this repo manually or use `brunch new dir -s brunch/with-es6`
-
-## Getting started
-
-* Install (if you don't have them):
+  1. Clone this repo.
+  1. Install (if you don't have them):
     * [Node.js](http://nodejs.org): `brew install node` on OS X
-    * [Brunch](http://brunch.io): `npm install -g brunch`
-    * Brunch plugins and app dependencies: `npm install`
-* Run:
-    * `brunch watch --server` — watches the project with continuous rebuild. This will also launch HTTP server with [pushState](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history).
-    * `brunch build --production` — builds minified project for production
-* Learn:
-    * `public/` dir is fully auto-generated and served by HTTP server.  Write your code in `app/` dir.
-    * Place static files you want to be copied from `app/assets/` to `public/`.
-    * [Brunch site](http://brunch.io), [Getting started guide](https://github.com/brunch/brunch-guide#readme)
+    * [Gulp](http://brunch.io): `npm install -g gulp`
+    * Gulp plugins and app dependencies: `npm install`
+  1. Run:
+    * `gulp` or `gulp watch`
+  1. Learn:
+    * `public/` dir is fully auto-generated.
+  * Write your code in `src/` dir.
 
-## ES7
-
-To use proposed JS features not included into ES6, do this:
-
-* `npm install --save-dev babel-preset-stage-0`
-* in `brunch-config.js`, add the preset: `presets: ['es2015', 'stage-0']`
