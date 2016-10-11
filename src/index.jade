@@ -1,0 +1,104 @@
+headTitle = "Taxi Sotogrande"
+headDescription = "Taxi Sotogrande es el mejor servicio de taxi en el área de Sotogrande. Transportes a campos de golf, Alcaidesa, Gibraltar, aeropuertos de Málaga y Sevilla...""
+doctype html
+html(lang='es')
+	head
+		title= headTitle
+		meta(name="description", content=headDescription)
+		link(rel="stylesheet", href="/css/style.css")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Oswald:300|Source+Sans+Pro:300")
+		link(rel="icon", href="/images/icon-web.png")
+		script(async, src='https://www.google-analytics.com/analytics.js')
+		script.
+			function Resizer(node){
+				var elem = node;
+				var curH;
+
+				function resize(h){
+					elem.style.height = h+'px';
+				};
+
+				function resizeHandler(e){
+					var newH =	window.innerHeight ||
+								document.documentElement.clientHeight ||
+								document.getElementsByTagName('body')[0].clientHeight;
+					newH = newH < 850? 850 : newH;
+					if(newH === curH) return; // only X changed
+					resize(newH);
+					curH = newH;
+				};
+				resizeHandler();
+				window.addEventListener('resize', resizeHandler);
+			}
+			window.onload = function(){
+				Resizer(document.getElementById('header'));
+				window.onload = undefined;
+			}
+		script.
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', 'UA-83884075-1', 'auto');
+			ga('send', 'pageview');
+	body(class="margin0")
+		header#header.position-relative.fontFamily-antonio.textShadow
+			#lang-selector.position-absolute
+				a.lang-link.color-orange(href="/")= ES
+				a.lang-link.marginLeft-20px(href="/en")= EN
+			img#header-icon.position-absolute-center(src="/images/icon.png", width="107", height="149")
+			h1#header-title.position-absolute-center
+				span(class="fontWeight-bold color-orange")=Taxi
+				Sotogrande
+			#header-phone.position-absolute-center
+				span 607 86 90 46
+			#header-sub.position-absolute-center
+				span#header-big Puedes ir donde te propongas
+				span#header-small.fontFamily-sourceSans Y nosotros podemos ayudarte
+		#body.fontFamily-sourceSans 
+			#why(class="textAlign-center wrapped-30 marginVertical-50")
+				h2
+					|¿Por qué Sotogrande.
+					|span.color-orange Taxi
+					|?
+				p
+					En Sotogrande.taxi trabajamos con personas, para la personas. Ya estemos ofreciéndole un servicio de taxi, un chófer personal o un transporte de golf, de polo o al aeropuerto, 
+					trabajamos para ofrecerle el mejor servicio entre los mejores.<br/>
+					No importa dónde se encuentre o dónde quiera llegar, le invitamos a llamarnos y a disfrutar del viaje con nosotros.
+			#services.wrapped-15.marginTop-50
+				#services-taxi.third first
+					h2 Taxi profesional
+					p
+						En Sotogrande Taxi ofrecemos nuestra flota de conductores profesionales para ofrecerle un servicio inmejorable en uno de los mejores lugares del mundo, 
+						ya sea por sus vacaciones, reuniones o viajes. Llámenos ahora y disfrute de un servicio de taxi puntual y sin preocupaciones
+				#services-golf.third
+					h2 Transporte de golfistas
+					p
+						Disponemos de vehículos con suficiente espacio de equipaje para transportar a grupos de personas y su equipo de golf.
+						Puede reservar el viaje directamente, especificando el tamaño del grupo durante la llamada, y le llevaremos a cualquiera de los increíbles campos de golf de la zona.
+				#services-chauffeur.third.last
+					h2 Chófer personal
+					p
+						|Cuando necesite un servicio discreto o personalizando para ir a un evento, o si quiere pasar desapercibido, o tan sólo ir de compras, le ofrecemos un chófer que le 
+						|recogerá allí dónde se encuentre para acompañarle y cubrir con todas sus necesidades hasta que le devuelva a su casa, hotel o destino.
+		footer#footer.fontFamily-sourceSans
+			.column
+				h3= Contacto
+				p Teléfono: 607 86 90 46
+			.column
+				h3 También recomendamos
+				p
+					a(href="http://www.taxisanroque.com") Taxi San Roque
+				p
+					a(href="http://www.taxienalcaidesa.es") Taxi en Alcaidesa
+				p
+					a(href="http://www.radiotaxisotogrande.com") Radiotaxi Sotogrande
+			.column
+				h3 Links de interés
+				p
+					a(rel="nofollow", href="http://sotogrande.com") Sotogrande
+				p
+					a(rel="nofollow", href="http://puertosotogrande.com") Puerto Sotogrande
+				p
+					a(rel="nofollow", href="http://www.valderrama.com") Real Club Valderrama
+			.column
+				h3 Copyright
+				p © 2015. Todos los derechos reservados
+				p Website creado por a(href="http://www.oscardc.com") Oscar D.C.

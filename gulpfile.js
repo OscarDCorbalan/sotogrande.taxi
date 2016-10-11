@@ -39,7 +39,7 @@ gulp.task('cssmin', () =>
 gulp.task('jade', () =>
 	gulp.src(path.join(SRC_DIR.root, '*.jade'))
 		.pipe(jade({
-			client: true
+			pretty: true
 		}))
 		.pipe(gulp.dest(PUB_DIR.root))
 );
