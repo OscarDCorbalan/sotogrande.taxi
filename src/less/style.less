@@ -1,3 +1,5 @@
+@orange: #F37321;
+
 body{min-width:880px;}
 
 .fontFamily-antonio,
@@ -63,6 +65,9 @@ body{min-width:880px;}
 			text-decoration: none;
 			color: #DDD;
 			display:inline-block;
+		}
+		.lang-link.color-orange{
+			color: @orange;
 		}
 		.lang-link:hover{
 			text-decoration: underline;
@@ -137,7 +142,7 @@ body{min-width:880px;}
 		display:inline-block;
 		width:24%;
 	}
-	
+
 	p,
 	a{
 		color:#CCC;
@@ -145,7 +150,7 @@ body{min-width:880px;}
 }
 
 /* colors */
-.color-orange{color:#F37321;}
+.color-orange{color: @orange;}
 
 /* shadow */
 .textShadow{text-shadow: 0 1px 0 #000;}
