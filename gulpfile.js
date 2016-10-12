@@ -1,30 +1,34 @@
 'use strict';
 
-const path = require('path');
 const gulp = require('gulp');
 const less = require('gulp-less');
 const jade = require('gulp-jade');
 const cssmin = require('gulp-cssmin');
+const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
 const connect = require('gulp-connect');
-const imagemin = require('gulp-imagemin');
 
 
-const SRC_DIR = path.join(__dirname, 'source');
+// Source folder configuration
+const SRC_DIR = {};
+SRC_DIR.root = './source/';
+SRC_DIR.assets = SRC_DIR.root + 'assets/';
+SRC_DIR.img = SRC_DIR.assets + 'images/';
+SRC_DIR.less = SRC_DIR.root + 'less/';
+SRC_DIR.jade = SRC_DIR.root + 'jade/';
+// Source file matchers, using respective directories
 const SRC_ASSETS = {
-	img: path.join(SRC_DIR, 'images', '*'),
-	less: path.join(SRC_DIR, 'less', '*.less'),
-	jade: path.join(SRC_DIR, 'jade', '*.jade')
+	css: SRC_DIR.assets + '**/*.css',
+	img: SRC_DIR.assets + 'images/**/*',
+	less: SRC_DIR.less + '*.less',
+	jade: SRC_DIR.jade + '**/*.jade'
 };
 
-
-const PUB_DIR = {
-	root: path.join(__dirname, 'public')
-};
-PUB_DIR.assets = path.join(PUB_DIR.root, 'assets');
-PUB_DIR.css = path.join(PUB_DIR.assets, 'css');
-PUB_DIR.fnt = path.join(PUB_DIR.assets, 'fonts');
-PUB_DIR.img = path.join(PUB_DIR.assets, 'images');
+const PUB_DIR = {};
+PUB_DIR.root = './public/';
+PUB_DIR.css = PUB_DIR.root + 'css/';
+PUB_DIR.fnt = PUB_DIR.root + 'fonts/';
+PUB_DIR.img = PUB_DIR.root + 'images/';
 
 
 /* TASKS */
@@ -43,7 +47,7 @@ gulp.task('less', () =>
 );
 
 gulp.task('cssmin', () =>
-    gulp.src(path.join(PUB_DIR.css, 'style.css'))
+    gulp.src(SRC_ASSETS.css)
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(PUB_DIR.css))
@@ -71,8 +75,9 @@ gulp.task('webserver', function() {
     	root: 'public',
 		livereload: true,
 		port: 80,
-		host: 'gulp.dev'
+		host: 'localhost'
 	});
 });
 
-gulp.task('default', ['less', 'cssmin', 'jade', 'imagemin', 'webserver', 'watch']);
+gulp.task('default', ['less', 'cssmin', 'jade', 'imagemin']);
+gulp.task('server', ['default', 'webserver', 'watch']);
