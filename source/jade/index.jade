@@ -11,58 +11,35 @@ html(lang='es')
 		link(rel="icon", href="/images/icon-web.png")
 		script(async, src='https://www.google-analytics.com/analytics.js')
 		script.
-			function Resizer(node){
-				var elem = node;
-				var curH;
-
-				function resize(h){
-					elem.style.height = h+'px';
-				};
-
-				function resizeHandler(e){
-					var newH =	window.innerHeight ||
-								document.documentElement.clientHeight ||
-								document.getElementsByTagName('body')[0].clientHeight;
-					newH = newH < 850? 850 : newH;
-					if(newH === curH) return; // only X changed
-					resize(newH);
-					curH = newH;
-				};
-				resizeHandler();
-				window.addEventListener('resize', resizeHandler);
-			}
-			window.onload = function(){
-				Resizer(document.getElementById('header'));
-				window.onload = undefined;
-			}
-		script.
 			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 			ga('create', 'UA-83884075-1', 'auto');
 			ga('send', 'pageview');
+		meta(name="viewport", content="width=device-width, initial-scale=1")
 	body(class="margin0")
-		header#header.position-relative.fontFamily-antonio.textShadow
-			.lang-selector.position-absolute
-				a.lang-link.color-orange(href="/") ES
-				a.lang-link.marginLeft-20px(href="/en") EN
-			img.icon.position-absolute-center(src="/images/icon.png", width="107", height="149")
-			h1.title.position-absolute-center #[span(class="fontWeight-bold color-orange") Taxi] Sotogrande
-			.phone.position-absolute-center
-				span 607 86 90 46
+		#top
+			nav.fontFamily-antonio.display-flex
+				h1.title Taxi Sotogrande
+				.lang-selector
+					a.lang-link.active(href="/") ES
+					a.lang-link.marginLeft-20px(href="/en") EN
+		header#header.fontFamily-antonio
+			.phone.position-absolute-center.fontFamily-sourceSans 24h &#9743 607 86 90 46
 			.sub.position-absolute-center
 				span.big Puedes ir donde te propongas
 				br
 				span.small.fontFamily-sourceSans Y nosotros podemos ayudarte
 		#body.fontFamily-sourceSans 
-			#why(class="textAlign-center wrapped-30 marginVertical-50")
-				h2 Por qué Sotogrande. #[span.color-orange Taxi]?
+			#why.marginVertical-50
+				h2.textAlign-center Por qué Sotogrande. #[span.color-light Taxi]?
 				p.
 					En Sotogrande.taxi trabajamos con personas, para la personas. Ya estemos
 					ofreciéndole un servicio de taxi, un chófer personal o un transporte de golf, 
 					de polo o al aeropuerto, trabajamos para ofrecerle el mejor servicio 
 					entre los mejores. #[br] No importa dónde se encuentre o dónde quiera 
 					llegar, le invitamos a llamarnos y a disfrutar del viaje con nosotros.
-			#services.wrapped-15.marginTop-50
+			#services.marginTop-50
 				#services-taxi.third.first
+					img(src="/images/service-sotogrande.jpg", width=320, height=190)
 					h2 Taxi profesional
 					p.
 						En Sotogrande Taxi ofrecemos nuestra flota de conductores profesionales 
@@ -70,6 +47,7 @@ html(lang='es')
 						mundo, ya sea por sus vacaciones, reuniones o viajes. Llámenos ahora y 
 						disfrute un servicio de taxi puntual y sin preocupaciones
 				#services-golf.third
+					img(src="/images/service-golf-transfers.jpg", width=320, height=190)
 					h2 Transporte de golfistas
 					p.
 						Disponemos de vehículos con suficiente espacio de equipaje para transportar
@@ -77,6 +55,7 @@ html(lang='es')
 						directamente, especificando el tamaño del grupo durante la llamada, 
 						y le llevaremos a cualquiera de los increíbles campos de golf de la zona.
 				#services-chauffeur.third.last
+					img(src="/images/service-chauffeur.jpg", width=320, height=190)
 					h2 Chófer personal
 					p.
 						Cuando necesite un servicio discreto o personalizando para ir a un evento, 
