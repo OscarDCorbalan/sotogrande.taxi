@@ -1,0 +1,36 @@
+mixin homeBody(values)
+	#top
+		nav.fontFamily-antonio.display-flex
+			h1.title #{bodyValues.header.title}
+			.lang-selector
+				a.lang-link.active(href="/") ES
+				a.lang-link.marginLeft-20px(href="/en") EN
+	header#header.fontFamily-antonio
+		.phone.position-absolute-center.fontFamily-sourceSans 24h &#9743 607 86 90 46
+		.sub.position-absolute-center
+			span.big #{values.header.big}
+			br
+			span.small.fontFamily-sourceSans #{values.header.small}
+	#body.fontFamily-sourceSans 
+		#why.marginVertical-50
+			h2.textAlign-center #{bodyValues.why.title}.#[span.color-light Taxi]?
+			p.
+				#{bodyValues.why.body[0]}
+				#[br]
+				#{bodyValues.why.body[1]}
+				#[br]
+				#{bodyValues.why.body[2]}
+		#services.marginTop-50
+			#services-taxi.third.first
+				img(src="/images/service-sotogrande.jpg", width=320, height=190)
+				h2 #{bodyValues.profes.title}
+				p #{bodyValues.profes.body}
+					
+			#services-golf.third
+				img(src="/images/service-golf-transfers.jpg", width=320, height=190)
+				h2 #{bodyValues.golf.title}
+				p #{bodyValues.golf.body}
+			#services-chauffeur.third.last
+				img(src="/images/service-chauffeur.jpg", width=320, height=190)
+				h2 #{bodyValues.chofer.title}
+				p #{bodyValues.chofer.body}

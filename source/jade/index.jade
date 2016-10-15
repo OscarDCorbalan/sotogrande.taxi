@@ -1,85 +1,28 @@
-- var headTitle = "Taxi Sotogrande"
-- var headDescription = "Taxi Sotogrande es el mejor servicio de taxi en el área de Sotogrande. Transportes a campos de golf, Alcaidesa, Gibraltar, aeropuertos de Málaga y Sevilla..."
+extends templates/home
 
-doctype html
-html(lang='es')
-	head
-		title= headTitle
-		meta(name="description", content=headDescription)
-		link(rel="stylesheet", href="/css/style.css")
-		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Oswald:300|Source+Sans+Pro:300")
-		link(rel="icon", href="/images/icon-web.png")
-		script(async, src='https://www.google-analytics.com/analytics.js')
-		script.
-			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-			ga('create', 'UA-83884075-1', 'auto');
-			ga('send', 'pageview');
-		meta(name="viewport", content="width=device-width, initial-scale=1")
-	body(class="margin0")
-		#top
-			nav.fontFamily-antonio.display-flex
-				h1.title Taxi Sotogrande
-				.lang-selector
-					a.lang-link.active(href="/") ES
-					a.lang-link.marginLeft-20px(href="/en") EN
-		header#header.fontFamily-antonio
-			.phone.position-absolute-center.fontFamily-sourceSans 24h &#9743 607 86 90 46
-			.sub.position-absolute-center
-				span.big Puedes ir donde te propongas
-				br
-				span.small.fontFamily-sourceSans Y nosotros podemos ayudarte
-		#body.fontFamily-sourceSans 
-			#why.marginVertical-50
-				h2.textAlign-center Por qué Sotogrande. #[span.color-light Taxi]?
-				p.
-					En Sotogrande.taxi trabajamos con personas, para la personas.
-					#[br]
-					Ya estemos ofreciéndole un servicio de taxi, un chófer personal 
-					o un transporte de golf, de polo o al aeropuerto, trabajamos para ofrecerle el mejor servicio 
-					entre los mejores.
-					#[br] 
-					No importa dónde se encuentre o dónde quiera 
-					llegar, le invitamos a llamarnos y a disfrutar del viaje con nosotros.
-			#services.marginTop-50
-				#services-taxi.third.first
-					img(src="/images/service-sotogrande.jpg", width=320, height=190)
-					h2 Taxi profesional
-					p.
-						En Sotogrande Taxi ofrecemos nuestra flota de conductores profesionales 
-						para ofrecerle un servicio inmejorable en uno de los mejores lugares del
-						mundo, ya sea por sus vacaciones, reuniones o viajes. Llámenos ahora y 
-						disfrute un servicio de taxi puntual y sin preocupaciones
-				#services-golf.third
-					img(src="/images/service-golf-transfers.jpg", width=320, height=190)
-					h2 Transporte de golfistas
-					p.
-						Disponemos de vehículos con suficiente espacio de equipaje para transportar
-						a grupos de personas y su equipo de golf. Puede reservar el viaje
-						directamente, especificando el tamaño del grupo durante la llamada, 
-						y le llevaremos a cualquiera de los increíbles campos de golf de la zona.
-				#services-chauffeur.third.last
-					img(src="/images/service-chauffeur.jpg", width=320, height=190)
-					h2 Chófer personal
-					p.
-						Cuando necesite un servicio discreto o personalizando para ir a un evento, 
-						o si quiere pasar desapercibido, o tan sólo ir de compras, le ofrecemos un 
-						chófer que le recogerá allí dónde se encuentre para acompañarle y cubrir con 
-						todas sus necesidades hasta que le devuelva a su casa, hotel o destino.
-		footer#footer.fontFamily-sourceSans
-			.column
-				h3 Contacto
-				p Teléfono: 607 86 90 46
-			.column
-				h3 También recomendamos
-				p #[a(href="http://www.taxisanroque.com") Taxi San Roque]
-				p #[a(href="http://www.taxienalcaidesa.es") Taxi en Alcaidesa]
-				p #[a(href="http://www.radiotaxisotogrande.com") Radiotaxi Sotogrande]
-			.column
-				h3 Links de interés
-				p #[a(rel="nofollow", href="http://sotogrande.com") Sotogrande]
-				p #[a(rel="nofollow", href="http://puertosotogrande.com") Puerto Sotogrande]
-				p #[a(rel="nofollow", href="http://www.valderrama.com") Real Club Valderrama]
-			.column
-				h3 Copyright
-				p © 2015. Todos los derechos reservados
-				p Website creado por #[a(href="http://www.oscardc.com") Oscar D.C.]
+block vars
+	- var lang = 'es'
+	- var headValues = {}
+	- headValues.title = 'Taxi Sotogrande'
+	- headValues.description = 'Taxi Sotogrande es el mejor servicio de taxi en el área de Sotogrande. Transportes a campos de golf, Alcaidesa, Gibraltar, aeropuertos de Málaga y Sevilla...'
+	
+	- var bodyValues = {}
+	- bodyValues.header = {}
+	- bodyValues.header.title = 'Taxi Sotogrande'
+	- bodyValues.header.big = 'Puedes ir donde te propongas'
+	- bodyValues.header.small = 'Y nosotros podemos ayudarte'
+	- bodyValues.why = {}
+	- bodyValues.why.title = '¿Por qué Sotogrande'
+	- bodyValues.why.body = []
+	- bodyValues.why.body.push('En Sotogrande.taxi trabajamos con personas, para la personas.')
+	- bodyValues.why.body.push('Ya estemos ofreciéndole un servicio de taxi, un chófer personal o un transporte de golf, de polo o al aeropuerto, trabajamos para ofrecerle el mejor servicio entre los mejores.')
+	- bodyValues.why.body.push('No importa dónde se encuentre o dónde quiera llegar, le invitamos a llamarnos y a disfrutar del viaje con nosotros.')
+	- bodyValues.profes = {}
+	- bodyValues.profes.title = 'Taxi profesional'
+	- bodyValues.profes.body = 'En Sotogrande Taxi ofrecemos nuestra flota de conductores profesionales para ofrecerle un servicio inmejorable en uno de los mejores lugares del mundo, ya sea por sus vacaciones, reuniones o viajes. Llámenos ahora y disfrute un servicio de taxi puntual y sin preocupaciones'
+	- bodyValues.golf = {}
+	- bodyValues.golf.title = 'Transporte de golfistas'
+	- bodyValues.golf.body = 'Disponemos de vehículos con suficiente espacio de equipaje para transportar a grupos de personas y su equipo de golf. Puede reservar el viaje directamente, especificando el tamaño del grupo durante la llamada, y le llevaremos a cualquiera de los increíbles campos de golf de la zona.'
+	- bodyValues.chofer = {}
+	- bodyValues.chofer.title = 'Chófer personal'
+	- bodyValues.chofer.body = 'Cuando necesite un servicio discreto o personalizando para ir a un evento, o si quiere pasar desapercibido, o tan sólo ir de compras, le ofrecemos un chófer que le recogerá allí dónde se encuentre para acompañarle y cubrir con todas sus necesidades hasta que le devuelva a su casa, hotel o destino.'

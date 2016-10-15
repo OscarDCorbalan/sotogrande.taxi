@@ -1,6 +1,7 @@
 'use strict';
 
 const gulp = require('gulp');
+const gutil = require('gulp-util');
 const less = require('gulp-less');
 const jade = require('gulp-jade');
 const cssmin = require('gulp-cssmin');
@@ -21,9 +22,13 @@ const SRC_ASSETS = {
 	css: SRC_DIR.assets + '**/*.css',
 	img: SRC_DIR.assets + 'images/**/*',
 	less: SRC_DIR.less + '*.less',
-	jade: SRC_DIR.jade + '**/*.jade'
+	jade: [
+		SRC_DIR.jade + '*.jade',
+		SRC_DIR.jade + 'en/*.jade'
+	]
 };
 
+// Output directories
 const PUB_DIR = {};
 PUB_DIR.root = './public/';
 PUB_DIR.css = PUB_DIR.root + 'css/';
@@ -31,7 +36,7 @@ PUB_DIR.fnt = PUB_DIR.root + 'fonts/';
 PUB_DIR.img = PUB_DIR.root + 'images/';
 
 
-/* TASKS */
+// TASKS
 
 gulp.task('watch', () => {
 	gulp.watch(SRC_ASSETS.img, ['imagemin']);
@@ -59,7 +64,11 @@ gulp.task('jade', () =>
 		.pipe(jade({
 			pretty: true
 		}))
-		.pipe(gulp.dest(PUB_DIR.root))
+		.pipe(gulp.dest(file => {
+			var jadeIndex = file.base.lastIndexOf('jade');
+			var relPath = file.base.substr(jadeIndex+5);
+			return PUB_DIR.root + relPath;
+		}))
 		.pipe(connect.reload())
 );
 
