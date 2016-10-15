@@ -157,10 +157,12 @@ p {
 	margin: 30px auto;
 }
 #services {
+	display: flex;
+	flex-direction: column;
 	@media @mediaDesktop {
-		display: flex;
+		align-items: flex-start;
 	    justify-content: space-between;
-	    align-items: flex-start;
+		flex-direction: row;
 	    margin: 0 5%;
 	}
 }
@@ -200,70 +202,40 @@ p {
 		}
 	}
 }
-/*
-#why h2::after{
-    content: "";
-    height: 1px;
-    width: 80px;
-    background-color: #F37321;
-    display: block;
-    margin: 30px auto;
-}
-#services::before{
-    content: "";
-    height: 1px;
-    background-color: #CCC;
-    display: block;
-    margin: 100px auto 0;
-}
-#services-taxi,
-#services-golf,
-#services-chauffeur{
-	background-repeat:no-repeat;
-    background-position: center 40px;
-	background-size:87%;
-    display: inline-block;
-    padding: 23% 2% 50px;
-    vertical-align: top;
-    width: 28%;
-}
-#services-taxi{background-image:url(/images/service-sotogrande.jpg);}
-#services-golf{background-image:url(/images/service-golf-transfers.jpg);}
-#services-chauffeur{background-image:url(/images/service-chauffeur.jpg);}
-.third.first{border-right: 1px solid #CCC;}
-.third.last{border-left: 1px solid #CCC;}
-*/
 #footer{
 	background: @base;
 	color:#F0F0F0;
+	display: flex;
+	flex-direction: column;
 	padding: 30px 10%;
-	@media @mediaDesktop {
-		display: flex;
-	    justify-content: center;
-	    align-items: flex-start;
-	}
 
 	.column{
 		vertical-align:top;
-		@media @mediaDesktop {
-		    flex-basis: 25%;
-		    flex-grow: 1;
-		    flex-shrink: 1;
-		}
 	}
 
 	h3 {
 		font-size: 200%;
 		color: @light;
-		@media @mediaDesktop {
-				font-size: 120%;
-		}
 	}
 
 	p,
 	a{
 		color:#F0F0F0;
-		@media @mediaDesktop {
+	}
+	@media @mediaDesktop {
+		align-items: flex-start;
+	    justify-content: space-between;
+		flex-direction: row;
+		.column {
+		    flex-basis: 25%;
+		    flex-grow: 1;
+		    flex-shrink: 1;
+		}
+		h3 {
+			font-size: 120%;
+		}
+		p,
+		a {
 			font-size: 90%;
 		}
 	}
