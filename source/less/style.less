@@ -1,6 +1,6 @@
 @mediaPhone: ~"only screen and (max-width: 720px)";
 @mediaTablets: ~"only screen and (min-width: 721px) and (max-width: 959px)";
-@mediaDesktop: ~"only screen and (min-width: 960px) and (max-width: 1280px)";
+@mediaDesktop: ~"only screen and (min-width: 960px)";
 
 @dark: #0B3C5D;
 @contrast: #328CC1;
@@ -55,10 +55,16 @@ p {
 		.title {
 			font-size: 300%;
 			text-transform:uppercase;
-			.margin-0
+			.margin-0;
+			@media @mediaDesktop {
+				font-size: 200%;
+			}
 		}
 		.lang-selector{
 			font-size: 200%;
+			@media @mediaDesktop {
+				font-size: 150%;
+			}
 			.lang-link{
 				text-transform: uppercase;
 				text-decoration: none;
@@ -68,6 +74,9 @@ p {
 			.lang-link.active{
 				color: @light;
 				.fontWeight-bold
+			}
+			.lang-link:hover{
+				color: #FFF;
 			}
 		}
 	}
@@ -81,19 +90,6 @@ p {
 	height: 768px;
 	position: relative;
 	text-align:center;
-	.sub{
-		bottom:0;
-		padding: 0 0 40px;
-		text-transform:uppercase;
-		.big{
-			font-size:300%;
-		}
-		.small{
-			bottom:100px;
-			font-size:200%;
-			color:@light;
-		}
-	}
 	.phone {
 		background: linear-gradient(to right, fade(@contrast, 0%), @contrast, fade(@contrast, 0%));
 		color: #F0F0F0;
@@ -102,6 +98,31 @@ p {
 		position:absolute;
 		right:0;
 		top: 150px;
+		@media @mediaDesktop {
+			font-size: 300%;
+		}
+	}
+	.sub{
+		bottom:0;
+		padding: 0 0 40px;
+		text-transform:uppercase;
+		.big{
+			font-size:300%;
+			@media @mediaDesktop {
+				font-size: 200%;
+			}
+		}
+		.small{
+			bottom:100px;
+			font-size:200%;
+			color:@light;
+			@media @mediaDesktop {
+				font-size: 150%;
+			}
+		}
+	}
+	@media @mediaDesktop {
+		height: 500px;
 	}
 }
 #body{
@@ -113,10 +134,18 @@ p {
 		font-size: 220%;
 		text-align: center;
 		margin: 30px 0 0px;
+		@media @mediaDesktop {
+			font-size: 150%;
+		}
 	}
 	p {
 		color:#333;
 		.wrap-text;
+		@media @mediaDesktop {
+			font-size: 100%;
+			text-align: center;
+			line-height: 2em;
+		}
 	}
 }
 #why h2:after{
@@ -127,10 +156,30 @@ p {
 	display: block;
 	margin: 30px auto;
 }
+#services {
+	@media @mediaDesktop {
+		display: flex;
+	    justify-content: space-between;
+	    align-items: flex-start;
+	    margin: 0 5%;
+	}
+}
 #services-taxi,
 #services-golf,
 #services-chauffeur{
 	padding-bottom: 50px;
+	@media @mediaDesktop {
+		text-align: center;
+		flex-basis: 30%;
+		p {
+			line-height: 1.7em;
+			color: #666;
+			font-size: 90%;
+		}
+		h2 {
+			color: @base;
+		}
+	}
 	img {
 		width: 100%;
 		height: auto;
@@ -140,8 +189,15 @@ p {
 #services-golf{
 	background-color: @dark;
 	color: #F0F0F0;
+	@media @mediaDesktop {
+		color: inherit;
+		background-color:inherit;
+	}
 	p {
 		color: #F0F0F0;
+		@media @mediaDesktop {
+			color: #666;
+		}
 	}
 }
 /*
@@ -181,20 +237,35 @@ p {
 	background: @base;
 	color:#F0F0F0;
 	padding: 30px 10%;
+	@media @mediaDesktop {
+		display: flex;
+	    justify-content: center;
+	    align-items: flex-start;
+	}
 
 	.column{
 		vertical-align:top;
-		/*display:inline-block;
-		width:24%;*/
+		@media @mediaDesktop {
+		    flex-basis: 25%;
+		    flex-grow: 1;
+		    flex-shrink: 1;
+		}
 	}
 
 	h3 {
 		font-size: 200%;
 		color: @light;
+		@media @mediaDesktop {
+				font-size: 120%;
+		}
 	}
 
+	p,
 	a{
 		color:#F0F0F0;
+		@media @mediaDesktop {
+			font-size: 90%;
+		}
 	}
 }
 
