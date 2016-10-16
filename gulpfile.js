@@ -62,7 +62,7 @@ gulp.task('cssmin', () =>
 gulp.task('jade', () =>
 	gulp.src(SRC_ASSETS.jade)
 		.pipe(jade({
-			pretty: true
+			/* pretty: true // Uncomment this to get unminified HTML */
 		}))
 		.pipe(gulp.dest(file => {
 			var jadeIndex = file.base.lastIndexOf('jade');
