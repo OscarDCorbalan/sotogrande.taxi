@@ -41,7 +41,11 @@ doctype html
 html(lang=lang)
 	block head
 		+head(headValues)
-	body(class="margin0")
+	body(class='margin0', itemscope, itemtype='http://schema.org/LocalBusiness')
 		+homeBody(lang, bodyValues)
 		+footer(footerValues)
+		link(itemprop='url' href='http://www.sotogrande.taxi/')
+		span(itemprop='geo' itemscope itemtype='http://schema.org/GeoCoordinates')
+			meta(itemprop='latitude' content='36.290913')
+			meta(itemprop='longitude' content='-5.271740')
 	script window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-83884075-1','auto');ga('send','pageview');
