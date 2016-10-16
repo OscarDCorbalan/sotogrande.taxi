@@ -1,0 +1,19 @@
+mixin footer(values)
+	footer#footer.fontFamily-sourceSans
+		.column
+			h3 #{values.contact}
+			p #{values.phone}: 607 86 90 46
+		.column
+			h3 #{values.recommend}
+			p #[a(href="http://www.taxisanroque.com") Taxi San Roque]
+			p #[a(href="http://www.taxienalcaidesa.es") Taxi en Alcaidesa]
+			p #[a(href="http://www.radiotaxisotogrande.com") Radiotaxi Sotogrande]
+		.column
+			h3 #{values.links}
+			p #[a(rel="nofollow", href="http://sotogrande.com") Sotogrande]
+			p #[a(rel="nofollow", href="http://puertosotogrande.com") Puerto Sotogrande]
+			p #[a(rel="nofollow", href="http://www.valderrama.com") Real Club Valderrama]
+		.column
+			h3 Copyright
+			p © 2015. #{values.rights}
+			p #{values.created} #[a(href="http://www.oscardc.com") Oscar D. Corbalan.]

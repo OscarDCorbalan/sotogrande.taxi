@@ -1,9 +1,12 @@
 include head
 include homeBody
+include footer
 
 block vars
 	- var lang = 'xxlang'
-	- var headValues = {title:'Default title', description:'Default desc'}	
+	
+	- var headValues = {title:'Default title', description:'Default desc'}
+	
 	- var bodyValues = {}
 	- bodyValues.header = {}
 	- bodyValues.header.title = 'xxbv.header.title'
@@ -21,7 +24,15 @@ block vars
 	- bodyValues.chofer = {}
 	- bodyValues.chofer.title = 'xxbv.golf.title'
 	- bodyValues.chofer.body = 'xxbv.golf.title'
-
+	
+	- var footerValues = {}
+	- footerValues.contact = 'xContacto'
+	- footerValues.phone = 'xTeléfono'
+	- footerValues.recommend = 'xTambién recomendamos'
+	- footerValues.links = 'xLinks de interés'
+	- footerValues.copyright = 'xCopyright'
+	- footerValues.rights = 'xTodos los derechos reservados'
+	- footerValues.created = 'xPágina web creada por'
 
 doctype html
 html(lang=lang)
@@ -29,21 +40,4 @@ html(lang=lang)
 		+head(headValues)
 	body(class="margin0")
 		+homeBody(bodyValues)
-		footer#footer.fontFamily-sourceSans
-			.column
-				h3 Contacto
-				p Teléfono: 607 86 90 46
-			.column
-				h3 También recomendamos
-				p #[a(href="http://www.taxisanroque.com") Taxi San Roque]
-				p #[a(href="http://www.taxienalcaidesa.es") Taxi en Alcaidesa]
-				p #[a(href="http://www.radiotaxisotogrande.com") Radiotaxi Sotogrande]
-			.column
-				h3 Links de interés
-				p #[a(rel="nofollow", href="http://sotogrande.com") Sotogrande]
-				p #[a(rel="nofollow", href="http://puertosotogrande.com") Puerto Sotogrande]
-				p #[a(rel="nofollow", href="http://www.valderrama.com") Real Club Valderrama]
-			.column
-				h3 Copyright
-				p © 2015. Todos los derechos reservados
-				p Website creado por #[a(href="http://www.oscardc.com") Oscar D.C.]
+		+footer(footerValues)

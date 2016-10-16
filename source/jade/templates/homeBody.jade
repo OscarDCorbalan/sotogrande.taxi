@@ -1,7 +1,7 @@
 mixin homeBody(values)
 	#top
 		nav.fontFamily-antonio.display-flex
-			h1.title #{bodyValues.header.title}
+			h1.title #{values.header.title}
 			.lang-selector
 				a.lang-link.active(href="/") ES
 				a.lang-link.marginLeft-20px(href="/en") EN
@@ -13,24 +13,24 @@ mixin homeBody(values)
 			span.small.fontFamily-sourceSans #{values.header.small}
 	#body.fontFamily-sourceSans 
 		#why.marginVertical-50
-			h2.textAlign-center #{bodyValues.why.title}.#[span.color-light Taxi]?
+			h2.textAlign-center #{values.why.title}.#[span.color-light Taxi]?
 			p.
-				#{bodyValues.why.body[0]}
+				#{values.why.body[0]}
 				#[br]
-				#{bodyValues.why.body[1]}
+				#{values.why.body[1]}
 				#[br]
-				#{bodyValues.why.body[2]}
+				#{values.why.body[2]}
 		#services.marginTop-50
 			#services-taxi.third.first
 				img(src="/images/service-sotogrande.jpg", width=320, height=190)
-				h2 #{bodyValues.profes.title}
-				p #{bodyValues.profes.body}
+				h2 #{values.profes.title}
+				p #{values.profes.body}
 					
 			#services-golf.third
 				img(src="/images/service-golf-transfers.jpg", width=320, height=190)
-				h2 #{bodyValues.golf.title}
-				p #{bodyValues.golf.body}
+				h2 #{values.golf.title}
+				p #{values.golf.body}
 			#services-chauffeur.third.last
 				img(src="/images/service-chauffeur.jpg", width=320, height=190)
-				h2 #{bodyValues.chofer.title}
-				p #{bodyValues.chofer.body}
+				h2 #{values.chofer.title}
+				p #{values.chofer.body}
