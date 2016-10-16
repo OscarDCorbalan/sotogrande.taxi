@@ -25,7 +25,8 @@ const SRC_ASSETS = {
 	jade: [
 		SRC_DIR.jade + '*.jade',
 		SRC_DIR.jade + 'en/*.jade'
-	]
+	],
+	jadeTemplates: SRC_DIR.jade + 'templates/*.jade'
 };
 
 // Output directories
@@ -42,7 +43,7 @@ PUB_DIR.img = PUB_DIR.root + 'images/';
 gulp.task('watch', () => {
 	gulp.watch(SRC_ASSETS.img, ['imagemin']);
 	gulp.watch(SRC_ASSETS.less, ['less']);
-	gulp.watch(SRC_ASSETS.jade, ['jade']);
+	gulp.watch([SRC_ASSETS.jade,  SRC_ASSETS.jadeTemplates], ['jade']);
 });
 
 gulp.task('less', () =>
