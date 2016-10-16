@@ -1,5 +1,4 @@
-@mediaPhone: ~"only screen and (max-width: 720px)";
-@mediaTablets: ~"only screen and (min-width: 721px) and (max-width: 959px)";
+@mediaPhone: ~"only screen and (max-width: 959px)";
 @mediaDesktop: ~"only screen and (min-width: 960px)";
 
 @dark: #0B3C5D;
@@ -10,10 +9,10 @@
 @zero: 0;
 
 .font-sans {
-	font-family: Helvetica, sans-serif;
+	font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Tahoma, Helvetica, Arial, sans-serif;
 }
 .font-serif {
-	font-family: Georgia, sans-serif;
+	font-family: Georgia, Times, "Times New Roman", serif;
 }
 
 html {
@@ -74,7 +73,6 @@ p {
 		.margin-0;
 	}
 	.lang-selector {
-		font-size: 120%;
 		.lang-link {
 			text-transform: uppercase;
 			text-decoration: none;
@@ -124,17 +122,20 @@ p {
 	}
 	@media @mediaDesktop {
 		height: 768px;
+		.phone {
+			font-size: 300%;
+		}
 	}
 }
-#body{
+#body {
 	margin-top: 40px;
 	text-align: left;
 	/* align center en pantalla grande */
-	h2{
+	h2 {
 		font-weight:300;
-		font-size: 175%;
+		font-size: 170%;
 		text-align: center;
-		margin: 30px 0 0px;
+		margin-top: 30px;
 		@media @mediaDesktop {
 			font-size: 150%;
 		}
@@ -146,19 +147,28 @@ p {
 		.wrap-text;
 		@media @mediaDesktop {
 			font-size: 100%;
-			text-align: center;
 			line-height: 2em;
 		}
 	}
 }
-#why h2:after{
-	content: "";
-	height: 1px;
-	width: 80px;
-	background-color: @light;
-	display: block;
-	margin: 30px auto;
+
+#why {
+	h2:after {
+		content: "";
+		height: 1px;
+		width: 80px;
+		background-color: @light;
+		display: block;
+		margin: 30px auto;
+	}
+
+	@media @mediaDesktop {
+		p {
+			text-align: center;
+		}
+	}
 }
+
 #services {
 	display: flex;
 	flex-direction: column;
@@ -172,15 +182,16 @@ p {
 	    justify-content: space-between;
 		flex-direction: row;
 	    margin: 0 5%;
-		text-align: center;
 		p {
 			line-height: 1.7em;
+			text-align: left;
 		}
 		h2 {
 			color: @base;
 		}
 	}
 }
+
 #services-taxi,
 #services-golf,
 #services-chauffeur{
@@ -190,24 +201,20 @@ p {
 		height: auto;
 		display: block;
 	}
-	@media @mediaDesktop{
+	@media @mediaDesktop {
 		flex-basis: 30%;
 	}
 }
-#services-golf{
-	background-color: @dark;
-	color: #FFF;
-	p {
-		color: #DADADA;
-		@media @mediaDesktop {
-			color: #666;
+#services-golf {
+	@media @mediaPhone {
+		background-color: @dark;
+		color: #FFF;
+		p {
+			color: #DADADA;
 		}
 	}
-	@media @mediaDesktop {
-		color: inherit;
-		background-color:inherit;
-	}
 }
+
 #footer{
 	background: @base;
 	color:#F0F0F0;
