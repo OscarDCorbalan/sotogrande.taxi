@@ -56,10 +56,6 @@ gulp.task('less', () =>
 		.pipe(connect.reload())
 );
 
-gulp.task('cssmin', () =>
-    gulp.src(PUB_DIR.cssFiles)
-);
-
 gulp.task('jade', () =>
 	gulp.src(SRC_ASSETS.jade)
 		.pipe(jade({
