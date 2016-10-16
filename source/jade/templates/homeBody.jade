@@ -15,15 +15,15 @@ mixin homeBody(lang, values)
 			p #{values.why.body[0]} #[br] #{values.why.body[1]} #[br] #{values.why.body[2]}
 		#services.marginTop-50
 			#services-taxi.third.first
-				img(src="/images/service-sotogrande.jpg", width=320, height=190)
+				img(src="/images/service-sotogrande.jpg", width=320, height=190, alt="#{values.profes.alt}")
 				h2 #{values.profes.title}
 				p #{values.profes.body}					
 			#services-golf.third
-				img(src="/images/service-golf-transfers.jpg", width=320, height=190)
+				img(src="/images/service-golf-transfers.jpg", width=320, height=190, alt="#{values.golf.alt}")
 				h2 #{values.golf.title}
 				p #{values.golf.body}
 			#services-chauffeur.third.last
-				img(src="/images/service-chauffeur.jpg", width=320, height=190)
+				img(src="/images/service-chauffeur.jpg", width=320, height=190, alt="#{values.chofer.alt}")
 				h2 #{values.chofer.title}
 				p #{values.chofer.body}
 				
