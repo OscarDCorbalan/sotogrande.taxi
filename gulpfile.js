@@ -32,6 +32,7 @@ const SRC_ASSETS = {
 const PUB_DIR = {};
 PUB_DIR.root = './public/';
 PUB_DIR.css = PUB_DIR.root + 'css/';
+PUB_DIR.cssFiles = PUB_DIR.root + 'css/style.css';
 PUB_DIR.fnt = PUB_DIR.root + 'fonts/';
 PUB_DIR.img = PUB_DIR.root + 'images/';
 
@@ -40,7 +41,7 @@ PUB_DIR.img = PUB_DIR.root + 'images/';
 
 gulp.task('watch', () => {
 	gulp.watch(SRC_ASSETS.img, ['imagemin']);
-	gulp.watch(SRC_ASSETS.less, ['less', 'cssmin']);
+	gulp.watch(SRC_ASSETS.less, ['less']);
 	gulp.watch(SRC_ASSETS.jade, ['jade']);
 });
 
@@ -48,15 +49,15 @@ gulp.task('less', () =>
 	gulp.src(SRC_ASSETS.less)
 		.pipe(less().on('error', err => console.log(err)))
 		.pipe(gulp.dest(PUB_DIR.css))
-		.pipe(connect.reload())
-);
-
-gulp.task('cssmin', () =>
-    gulp.src(SRC_ASSETS.css)
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(PUB_DIR.css))
 		.pipe(connect.reload())
+		.pipe(connect.reload())
+);
+
+gulp.task('cssmin', () =>
+    gulp.src(PUB_DIR.cssFiles)
 );
 
 gulp.task('jade', () =>
@@ -88,5 +89,5 @@ gulp.task('webserver', function() {
 	});
 });
 
-gulp.task('default', ['less', 'cssmin', 'jade', 'imagemin']);
+gulp.task('default', ['less', 'jade', 'imagemin']);
 gulp.task('server', ['default', 'webserver', 'watch']);
