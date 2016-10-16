@@ -1,10 +1,8 @@
-mixin homeBody(values)
+mixin homeBody(lang, values)
 	#top
 		nav.nav.display-flex
 			h1.title #{values.header.title}
-			.lang-selector
-				a.lang-link.active(href="/") ES
-				a.lang-link.marginLeft-20px(href="/en") EN
+			+langSelector(lang)
 	header#header.fontFamily-antonio
 		.phone.position-absolute-center.fontFamily-sourceSans 24h &#9743 607 86 90 46
 		.sub.position-absolute-center
@@ -14,18 +12,12 @@ mixin homeBody(values)
 	#body.fontFamily-sourceSans 
 		#why.marginVertical-50
 			h2.textAlign-center #{values.why.title}.#[span.color-light Taxi]?
-			p.
-				#{values.why.body[0]}
-				#[br]
-				#{values.why.body[1]}
-				#[br]
-				#{values.why.body[2]}
+			p #{values.why.body[0]} #[br] #{values.why.body[1]} #[br] #{values.why.body[2]}
 		#services.marginTop-50
 			#services-taxi.third.first
 				img(src="/images/service-sotogrande.jpg", width=320, height=190)
 				h2 #{values.profes.title}
-				p #{values.profes.body}
-					
+				p #{values.profes.body}					
 			#services-golf.third
 				img(src="/images/service-golf-transfers.jpg", width=320, height=190)
 				h2 #{values.golf.title}
@@ -34,3 +26,12 @@ mixin homeBody(values)
 				img(src="/images/service-chauffeur.jpg", width=320, height=190)
 				h2 #{values.chofer.title}
 				p #{values.chofer.body}
+				
+mixin langSelector(lang)
+	.lang-selector
+		if lang == 'es'
+			a.lang-link.active(href="/") ES
+			a.lang-link.marginLeft-20px(href="/en") EN
+		else
+			a.lang-link(href="/") ES
+			a.lang-link.active.marginLeft-20px(href="/en") EN
