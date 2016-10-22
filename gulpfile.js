@@ -16,16 +16,23 @@ SRC_DIR.assets = SRC_DIR.root + 'assets/';
 SRC_DIR.img = SRC_DIR.assets + 'images/';
 SRC_DIR.less = SRC_DIR.root + 'less/';
 SRC_DIR.jade = SRC_DIR.root + 'jade/';
+
 // Source file matchers, using respective directories
-const SRC_ASSETS = {
-	css: SRC_DIR.assets + '**/*.css',
-	img: SRC_DIR.assets + 'images/**/*',
+const SRC_FILES = {
 	less: SRC_DIR.less + '*.less',
+	jadeTemplates: SRC_DIR.jade + 'templates/*.jade',
 	jade: [
 		SRC_DIR.jade + '*.jade',
 		SRC_DIR.jade + 'en/*.jade'
 	],
-	jadeTemplates: SRC_DIR.jade + 'templates/*.jade'
+	assets: {
+		css: SRC_DIR.assets + '**/*.css',
+		images: SRC_DIR.assets + 'images/**/*',
+		allButImages: [
+			SRC_DIR.assets + '**/*',
+			SRC_DIR.assets + '!images/**/*'
+		]
+	}
 };
 
 // Output directories
@@ -40,13 +47,13 @@ PUB_DIR.img = PUB_DIR.root + 'images/';
 // TASKS
 
 gulp.task('watch', () => {
-	gulp.watch(SRC_ASSETS.img, ['imagemin']);
-	gulp.watch(SRC_ASSETS.less, ['less']);
-	gulp.watch([SRC_ASSETS.jade,  SRC_ASSETS.jadeTemplates], ['jade']);
+	gulp.watch(SRC_FILES.assets.images, ['imagemin']);
+	gulp.watch(SRC_FILES.less, ['less']);
+	gulp.watch([SRC_FILES.jade,  SRC_FILES.jadeTemplates], ['jade']);
 });
 
 gulp.task('less', () =>
-	gulp.src(SRC_ASSETS.less)
+	gulp.src(SRC_FILES.less)
 		.pipe(less().on('error', err => console.log(err)))
 		.pipe(gulp.dest(PUB_DIR.css))
         .pipe(cssmin())
@@ -57,7 +64,7 @@ gulp.task('less', () =>
 );
 
 gulp.task('jade', () =>
-	gulp.src(SRC_ASSETS.jade)
+	gulp.src(SRC_FILES.jade)
 		.pipe(jade({
 			/* pretty: true // Uncomment this to get unminified HTML */
 		}))
@@ -70,7 +77,7 @@ gulp.task('jade', () =>
 );
 
 gulp.task('imagemin', () =>
-    gulp.src(SRC_ASSETS.img)
+    gulp.src(SRC_FILES.assets.images)
         .pipe(imagemin())
         .pipe(gulp.dest(PUB_DIR.img))
 		.pipe(connect.reload())
