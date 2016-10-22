@@ -79,16 +79,17 @@ p {
 			color: #777;
 			display:inline-block;
 		}
-		.lang-link.active {
+		span.lang-link.active {
 			color: @light;
+			cursor: default;
 		}
-		.lang-link:hover {
+		a.lang-link:hover {
 			color: #FFF;
 		}
 	}
 }
 #header {
-	background-image: url(/images/bg4.jpg);
+	background-image: url(/images/bg-mini.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 100%;
@@ -122,6 +123,7 @@ p {
 	}
 	@media @mediaDesktop {
 		height: 768px;
+		background-image: url(/images/bg.jpg);
 		.phone {
 			font-size: 300%;
 		}

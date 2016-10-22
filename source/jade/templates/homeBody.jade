@@ -30,8 +30,8 @@ mixin homeBody(lang, values)
 mixin langSelector(lang)
 	.lang-selector
 		if lang == 'es'
-			a.lang-link.active(href="/") ES
-			a.lang-link.marginLeft-20px(href="/en") EN
+			span.lang-link.active ES
+			a.lang-link.marginLeft-20px(href="/en/") EN
 		else
 			a.lang-link(href="/") ES
-			a.lang-link.active.marginLeft-20px(href="/en") EN
+			span.lang-link.active.marginLeft-20px EN
