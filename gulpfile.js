@@ -1,7 +1,6 @@
 'use strict';
 
 const gulp = require('gulp');
-const gutil = require('gulp-util');
 const less = require('gulp-less');
 const jade = require('gulp-jade');
 const cssmin = require('gulp-cssmin');
