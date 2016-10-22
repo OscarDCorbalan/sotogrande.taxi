@@ -47,9 +47,10 @@ PUB_DIR.img = PUB_DIR.root + 'images/';
 // TASKS
 
 gulp.task('watch', () => {
-	gulp.watch(SRC_FILES.assets.images, ['imagemin']);
 	gulp.watch(SRC_FILES.less, ['less']);
 	gulp.watch([SRC_FILES.jade,  SRC_FILES.jadeTemplates], ['jade']);
+	gulp.watch(SRC_FILES.assets.images, ['imagemin']);
+	gulp.watch(SRC_FILES.assets.notImages, ['copyAssets']);
 });
 
 gulp.task('less', () =>
@@ -83,14 +84,20 @@ gulp.task('imagemin', () =>
 		.pipe(connect.reload())
 );
 
-gulp.task('webserver', function() {
+gulp.task('copyAssets', () =>
+    gulp.src(SRC_FILES.assets.allButImages)
+        .pipe(gulp.dest(PUB_DIR.root))
+		.pipe(connect.reload())
+);
+
+gulp.task('webserver', () =>
 	connect.server({
     	root: 'public',
 		livereload: true,
 		port: 80,
 		host: 'localhost'
-	});
-});
+	})
+);
 
-gulp.task('default', ['less', 'jade', 'imagemin']);
+gulp.task('default', ['less', 'jade', 'imagemin', 'copyAssets']);
 gulp.task('server', ['default', 'webserver', 'watch']);
