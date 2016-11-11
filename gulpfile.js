@@ -88,6 +88,7 @@ gulp.task('imagemin', () =>
 
 gulp.task('craeateWebpImages', () =>
     gulp.src(SRC_FILES.assets.jpgImages)
+		.pipe(rename({suffix: '.jpg'}))
         .pipe(webp({
 			preset: 'photo',
 			autoFilter: true,
