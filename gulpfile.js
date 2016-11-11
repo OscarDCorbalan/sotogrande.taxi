@@ -29,6 +29,7 @@ const SRC_FILES = {
 	assets: {
 		css: SRC_DIR.assets + '**/*.css',
 		images: SRC_DIR.assets + 'images/**/*',
+		jpgImages: SRC_DIR.assets + 'images/**/*.jpg',
 		allButImages: [
 			SRC_DIR.assets + '**/*',
 			SRC_DIR.assets + '!images/**/*'
@@ -86,7 +87,7 @@ gulp.task('imagemin', () =>
 );
 
 gulp.task('craeateWebpImages', () =>
-    gulp.src(SRC_FILES.assets.images)
+    gulp.src(SRC_FILES.assets.jpgImages)
         .pipe(webp({
 			preset: 'photo',
 			autoFilter: true,
