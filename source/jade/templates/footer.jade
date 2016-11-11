@@ -1,15 +1,6 @@
 mixin footer(lang)
 	- var values = {}
 	if lang == "en"
-		- values.contact = 'Contacto'
-		- values.phone = 'Teléfono'
-		- values.recommend = 'También recomendamos'
-		- values.links = 'Links de interés'
-		- values.copyright = 'Copyright'
-		- values.rights = 'Todos los derechos reservados'
-		- values.created = 'Página web creada por'
-		- values.aviso = 'Aviso legal'
-	else
 		- values.contact = 'Contact'
 		- values.phone = 'Phone'
 		- values.recommend = 'We also recommend'
@@ -18,6 +9,15 @@ mixin footer(lang)
 		- values.rights = 'All rights reserved'
 		- values.created = 'Website created by'
 		- values.aviso = 'Legal notice'
+	else
+		- values.contact = 'Contacto'
+		- values.phone = 'Teléfono'
+		- values.recommend = 'También recomendamos'
+		- values.links = 'Links de interés'
+		- values.copyright = 'Copyright'
+		- values.rights = 'Todos los derechos reservados'
+		- values.created = 'Página web creada por'
+		- values.aviso = 'Aviso legal'
 
 	footer#footer.fontFamily-sourceSans
 		.column
