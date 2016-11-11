@@ -1,31 +1,31 @@
 {
-	"name": "sotogrande.taxi",
-	"description": "Description",
-	"version": "0.9.1",
-	"homepage": "http://www.sotogrande.taxi",
-	"keywords": "gulp, less, jade, node",
-	"license": "QPL-1.0",
-	"author": {
-		"name": "Oscar D. Corbalan",
-		"email" : "oscardc@gmx.com",
-		"url" : "http://www.oscardc.com"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/OscarDCorbalan/sotogrande.taxi.git"
-	},
-	"bugs": {
-		"url" : "https://github.com/OscarDCorbalan/sotogrande.taxi/issues",
-		"email" : "oscardc@gmx.com"
-	},
-	"scripts": {},
-	"devDependencies": {
-	    "gulp": "^3.9.1",
-	    "gulp-connect": "^5.0.0",
-	    "gulp-cssmin": "^0.1.7",
-	    "gulp-imagemin": "^3.0.3",
-	    "gulp-jade": "^1.1.0",
-	    "gulp-less": "^3.1.0",
-	    "gulp-rename": "^1.2.2"
-	}
+  "name": "sotogrande.taxi",
+  "description": "Description",
+  "homepage": "http://www.sotogrande.taxi",
+  "keywords": "gulp, less, jade, node",
+  "license": "QPL-1.0",
+  "author": {
+    "name": "Oscar D. Corbalan",
+    "email": "oscardc@gmx.com",
+    "url": "http://www.oscardc.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OscarDCorbalan/sotogrande.taxi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OscarDCorbalan/sotogrande.taxi/issues",
+    "email": "oscardc@gmx.com"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-jade": "^1.1.0",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-webp": "^2.3.0"
+  }
 }

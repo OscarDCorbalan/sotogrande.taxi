@@ -5,6 +5,7 @@ const less = require('gulp-less');
 const jade = require('gulp-jade');
 const cssmin = require('gulp-cssmin');
 const imagemin = require('gulp-imagemin');
+const webp = require('gulp-webp');
 const rename = require('gulp-rename');
 const connect = require('gulp-connect');
 
@@ -82,6 +83,16 @@ gulp.task('imagemin', () =>
         .pipe(imagemin())
         .pipe(gulp.dest(PUB_DIR.img))
 		.pipe(connect.reload())
+);
+
+gulp.task('craeateWebpImages', () =>
+    gulp.src(SRC_FILES.assets.images)
+        .pipe(webp({
+			preset: 'photo',
+			autoFilter: true,
+			sharpness: 3
+		}))
+        .pipe(gulp.dest(PUB_DIR.img))
 );
 
 gulp.task('copyAssets', () =>
