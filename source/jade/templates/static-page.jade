@@ -1,0 +1,22 @@
+include head
+include homeBody
+include footer
+
+block vars
+	- var lang = 'xxlang'
+	
+	- var headValues = {title:'Default title', description:'Default desc'}
+	
+doctype html
+html(lang=lang)
+	block head
+		+head(headValues)
+	body#body.margin0
+		#top
+			nav.nav.display-flex
+				h2.title #{navTitle}
+				+langSelector(lang)
+		#main-article
+			block content
+		+footer(footerValues)
+	script window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-83884075-1','auto');ga('send','pageview');

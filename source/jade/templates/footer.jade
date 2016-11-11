@@ -8,6 +8,7 @@ mixin footer(lang)
 		- values.copyright = 'Copyright'
 		- values.rights = 'Todos los derechos reservados'
 		- values.created = 'Página web creada por'
+		- values.aviso = 'Aviso legal'
 	else
 		- values.contact = 'Contact'
 		- values.phone = 'Phone'
@@ -16,6 +17,7 @@ mixin footer(lang)
 		- values.copyright = 'Copyright'
 		- values.rights = 'All rights reserved'
 		- values.created = 'Website created by'
+		- values.aviso = 'Legal notice'
 
 	footer#footer.fontFamily-sourceSans
 		.column
@@ -34,4 +36,6 @@ mixin footer(lang)
 		.column
 			h3 Copyright
 			p © 2015. #{values.rights}.
-			p #{values.created} #[a(href="http://www.oscardc.com") Oscar D. Corbalan.]
+			p #{values.created} #[a(href="http://www.oscardc.com") Oscar D. Corbalan].
+			p #[a(href="/politica-de-privacidad") #{values.aviso}].
+			

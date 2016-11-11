@@ -1,7 +1,7 @@
 {
   "name": "sotogrande.taxi",
   "description": "Description",
-  "version": "0.11.1",
+  "version": "0.12.0",
   "homepage": "http://www.sotogrande.taxi",
   "keywords": "gulp, less, jade, node",
   "license": "QPL-1.0",
