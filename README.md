@@ -1,4 +1,4 @@
-﻿# Sotogrande Taxi
+# Sotogrande Taxi
 
 This is the source code to build the [Sotogrande Taxi site](http://www.sotogrande.taxi). It uses:
   * Gulp to automate build tasks.
@@ -17,4 +17,8 @@ This is the source code to build the [Sotogrande Taxi site](http://www.sotogrand
   1. Learn:
     * `public/` dir is fully auto-generated.
   * Write your code in `src/` dir.
+  
+## Project homepage
+
+The homepage with development-related and other details can be found at http://www.oscardc.com/project/sotogrande-taxi
 
